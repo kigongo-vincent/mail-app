@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders'
     # 'django-cors-headers',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', #cors middleware for Cross Origin Resource Sharing
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -121,6 +123,8 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 from . import config
 
